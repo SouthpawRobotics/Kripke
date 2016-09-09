@@ -99,7 +99,7 @@ task usercontrol()
 			motor[rightArm] = 127; // Set the right arm to up at full speed
 		} else if(vexRT[Btn6D] && !SensorBoolean[rightArmDown]) { // Otherwise if the lower right trigger is pressed and the limit switch is not activated
 			motor[rightArm] = -127; // Set the right arm to down at full speed
-		} else { // If no motion is to occure
+		} else { // If no motion is to occur
 			motor[rightArm] = 0; // Turn off the right arm
 		}
 		if(vexRT[Btn7U]){ // If the top button on the left D-Pad is pressed
