@@ -84,37 +84,37 @@ task usercontrol()
 
 	while (true)
 	{
-		motor[frontLeft] = vexRT[Ch3];
-		motor[backLeft] = vexRT[Ch3];
-		motor[frontRight] = vexRT[Ch2];
-		motor[backRight] = vexRT[Ch2];
-		if(vexRT[Btn5U]){
-			motor[leftArm] = 127;
-		} else if(vexRT[Btn5D]) {
-			motor[leftArm] = -127;
-		} else {
-			motor[leftArm] = 0;
+		motor[frontLeft] = vexRT[Ch3]; // Set the front left drive motor to the value of the vertical axis on the left joystick
+		motor[backLeft] = vexRT[Ch3]; // Set the back left drive motor to the value of the vertical axis on the left joystick
+		motor[frontRight] = vexRT[Ch2]; // Set the front right drive motor to the value of the vertical axis on the right joystick
+		motor[backRight] = vexRT[Ch2]; // Set the back right drive motor to the value of the vertical axis on the right joystick
+		if(vexRT[Btn5U]){ // Find if the upper left trigger is pressed
+			motor[leftArm] = 127; // Set the left arm to up at full speed
+		} else if(vexRT[Btn5D]) { // Otherwise if the lower left trigger is pressed
+			motor[leftArm] = -127; // Set the left arm to down at full speed
+		} else { // If neither button is pressed
+			motor[leftArm] = 0; // Turn off the left arm
 		}
-		if(vexRT[Btn6U]){
-			motor[rightArm] = 127;
-		} else if(vexRT[Btn6D]) {
-			motor[rightArm] = -127;
-		} else {
-			motor[rightArm] = 0;
+		if(vexRT[Btn6U]){ // Find if the upper right trigger is pressed
+			motor[rightArm] = 127; // Set the right arm to up at full speed
+		} else if(vexRT[Btn6D]) { // Otherwise if the lower right trigger is pressed
+			motor[rightArm] = -127; // Set the right arm to down at full speed
+		} else { // If neither button is pressed
+			motor[rightArm] = 0; // Turn off the right arm
 		}
-		if(vexRT[Btn7U]){
-			motor[leftClaw] = 127;
-		} else if(vexRT[Btn7D]) {
-			motor[leftClaw] = -127;
-		} else {
-			motor[leftClaw] = 0;
+		if(vexRT[Btn7U]){ // If the top button on the left D-Pad is pressed
+			motor[leftClaw] = 127; // Open the left claw at full speed
+		} else if(vexRT[Btn7D]) { // If the bottom button on the left D-Pad is pressed
+			motor[leftClaw] = -127; // Close the left claw at full speed
+		} else { // If neither button is pushed
+			motor[leftClaw] = 0; // Turn off the left claw
 		}
-		if(vexRT[Btn8U]){
-			motor[rightClaw] = 127;
-		} else if(vexRT[Btn8D]) {
-			motor[rightClaw] = -127;
-		} else {
-			motor[rightClaw] = 0;
+		if(vexRT[Btn8U]){ // If the top button on the right D-Pad is pressed
+			motor[rightClaw] = 127; // Turn on the right claw at full speed
+		} else if(vexRT[Btn8D]) { // If the bottom button on the right D-Pad is pressed
+			motor[rightClaw] = -127; // Close the right claw at full speed
+		} else { // If neither button is pushed
+			motor[rightClaw] = 0; // Turn off the right claw
 		}
 	}
 }
