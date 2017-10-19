@@ -88,7 +88,7 @@ task usercontrol()
     motor[frontRight] = vexRT[Ch3] - vexRT[Ch4];
     motor[backLeft]  = vexRT[Ch3] + vexRT[Ch4];
     motor[backRight] = vexRT[Ch3] - vexRT[Ch4];
-		bool rightArmActive = vexRT[Btn7R];
+		byte rightArmActive = vexRT[Btn7R];
 		if(vexRT[Btn5U] && !SensorBoolean[rightArmActive ? rightArmUp : leftArmUp]){ // Find if the upper left trigger is pressed and make sure the limit switch is not activated
 			motor[rightArmActive ? rightArm : leftArm] = 127; // Set the left arm to up at full speed
 		} else if(vexRT[Btn5D] && !SensorBoolean[rightArmActive ? rightArmDown : leftArmDown]) { // Otherwise if the lower left trigger is pressed and make sure the limit switch is not activated
@@ -105,7 +105,7 @@ task usercontrol()
 		}
 		if(rightArmActive){
 			motor[leftArm] = 0;
-			motor[rightClaw] = 0;
+			motor[leftClaw] = 0;
 		} else {
 			if(vexRT[Btn6U] && !SensorBoolean[rightArmUp]){ // Find if the upper right trigger is pressed and the limit switch is not activated
 				motor[rightArm] = 127; // Set the right arm to up at full speed
